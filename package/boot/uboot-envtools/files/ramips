@@ -24,6 +24,7 @@ linkits7688 | \
 linkits7688d | \
 wsr-600 | \
 wsr-1166 | \
+xiaomi-miwifi-nano
 br6425)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x1000" "0x10000"
 	;;
