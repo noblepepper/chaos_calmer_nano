@@ -1,0 +1,31 @@
+#!/bin/sh
+touch /etc/config/wireless
+uci set wireless.radio0=wifi-device
+uci set wireless.radio0.type='ralink'
+uci set wireless.radio0.variant='mt7628'
+uci set wireless.radio0.country='TW'
+uci set wireless.radio0.hwmode='11g'
+uci set wireless.radio0.htmode='HT40'
+uci set wireless.radio0.channel='auto'
+uci set wireless.radio0.disabled='0'
+uci set wireless.ap=wifi-iface
+uci set wireless.ap.device='radio0'
+uci set wireless.ap.mode='ap'
+uci set wireless.ap.network='lan'
+uci set wireless.ap.ifname='ra0'
+uci set wireless.ap.encryption='psk-mixed'
+uci set wireless.ap.key='87654321'
+uci set wireless.ap.ssid='MiWiFiNano'
+uci set wireless.ap.seq='1'
+uci set wireless.sta=wifi-iface
+uci set wireless.sta.device='radio0'
+uci set wireless.sta.mode='sta'
+uci set wireless.sta.network='wan'
+uci set wireless.sta.ifname='apcli0'
+uci set wireless.sta.disabled='0'
+uci set wireless.sta.ssid='yourNetworksSSID'
+uci set wireless.sta.key='yourNetworksKey'
+uci set wireless.sta.encryption='psk2'
+uci set wireless.sta.disabled='1'
+uci commit wireless
+exit 0
